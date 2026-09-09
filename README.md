@@ -40,7 +40,9 @@ git commit itu digunakan untuk menyimpan perubahan yang sudah dibuat di reposito
 Waktu pertama kali menggunakan github, saya pernah hanya melakukan commit dan tidak melakukan push. Ini terjadi karena saat itu pengetahuan saya masih kurang dimana harusnya juga melakukan push agar perubahan yang sudah dicommit bisa terlihat di repository github. Saya memyadarinya saat mengerjakan proyek bersama teman dimana saat teman saya mengecek repository ternyata belum ada perubahan yang terjadi. Dari pengalaman tersebut, saya jadi paham bahwa commit itu hanya untuk simpan perubahan di repository lokal dan push iyu untuk mengirim perubahan tersebut ke repository github
 
 ## JSX vs TSX
-(tulis di sini)
+`.jsx` adalah sintaks yang memungkinkan menulis markup yang mirip dengan HTML didalam JavaScript, kegunaannya untuk buat tampilan pada React dan membuat komponen agar bisa digunakan pada halaman lain. Sedangkan `.tsx` adalah `.jsx` yang menggunakan TypeScript. 
+
+Menurut saya, project ini menggunakan TSX karena kita bisa menentukan tipe data, terutama pada props. Jadinya error akan lebih mudah dideteksi sebelum programnya dijalankan
 
 ## Kenapa Union Type untuk Status
 (tulis di sini)
