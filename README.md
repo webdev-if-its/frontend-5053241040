@@ -45,7 +45,7 @@ Waktu pertama kali menggunakan github, saya pernah hanya melakukan commit dan ti
 Menurut saya, project ini menggunakan TSX karena kita bisa menentukan tipe data, terutama pada props. Jadinya error akan lebih mudah dideteksi sebelum programnya dijalankan
 
 ## Kenapa Union Type untuk Status
-(tulis di sini)
+Karena Union type itu membuat status hanya bisa menggunakan pilihan yang sudah ditentukan, diproject ini menggunakan `pending`, `selesai`, `batal`. Menurut saya, menggunakan Union type pada project ini akan menjadikan project ini lebih aman dan baik daripada menggunakan string biasa karena bisa terjadi kesalahan penulisan status yang tidak sesuai
 
 ## Refleksi
 (tulis di sini)
