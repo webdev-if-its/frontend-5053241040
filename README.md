@@ -27,12 +27,12 @@ Kalau dosen memperbaiki sesuatu di pertemuan yang sudah dirilis (mis. ada bug di
 Bagian di bawah ini **isi bertahap** sesuai level yang sedang kalian kerjakan (lihat `pertemuan-XX/SOAL.md`) — heading-nya dicek otomatis, jangan diganti namanya.
 
 ## Struktur Project
-(tulis di sini)
+dari yang saya baru pelajari dan pahami, `main.tsx` berperan sebagai titik awal untuk menjalankan aplikasi react dan menampilkan komponen App ke dalam elemen root yang ada di `index.html`. Sedangkan `app.tsx` berperan sebagai komponen utama yang menjadi tempat tampilan utama aplikasi yang dibuat dan ditampilkan
 
 ## Identitas
-- Nama: (tulis di sini)
-- NRP: (tulis di sini)
-- Kelas: (tulis di sini)
+- Nama: Annisa Zahra Fitria
+- NRP: 5053241040
+- Kelas: M
 
 ## Commit vs Push
 (tulis di sini)
