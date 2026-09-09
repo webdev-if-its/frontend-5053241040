@@ -35,7 +35,9 @@ dari yang saya baru pelajari dan pahami, `main.tsx` berperan sebagai titik awal 
 - Kelas: M
 
 ## Commit vs Push
-(tulis di sini)
+git commit itu digunakan untuk menyimpan perubahan yang sudah dibuat di repository lokal. kalau git push digunakan untuk mengirim commit dari repository lokal ke repository remote seperti github. 
+
+Waktu pertama kali menggunakan github, saya pernah hanya melakukan commit dan tidak melakukan push. Ini terjadi karena saat itu pengetahuan saya masih kurang dimana harusnya juga melakukan push agar perubahan yang sudah dicommit bisa terlihat di repository github. Saya memyadarinya saat mengerjakan proyek bersama teman dimana saat teman saya mengecek repository ternyata belum ada perubahan yang terjadi. Dari pengalaman tersebut, saya jadi paham bahwa commit itu hanya untuk simpan perubahan di repository lokal dan push iyu untuk mengirim perubahan tersebut ke repository github
 
 ## JSX vs TSX
 (tulis di sini)
