@@ -48,4 +48,4 @@ Menurut saya, project ini menggunakan TSX karena kita bisa menentukan tipe data,
 Karena Union type itu membuat status hanya bisa menggunakan pilihan yang sudah ditentukan, diproject ini menggunakan `pending`, `selesai`, `batal`. Menurut saya, menggunakan Union type pada project ini akan menjadikan project ini lebih aman dan baik daripada menggunakan string biasa karena bisa terjadi kesalahan penulisan status yang tidak sesuai
 
 ## Refleksi
-(tulis di sini)
+Dalam penjelasan materi dan tugas di pertemuan ini, konsep yang paling mengubah cara berpikir saya adalah komponen dan props. Disaat menulis HMTL biasa akan lebih fokus dalam membuat tamplilan, di react justru membuat bagian tampilan itu bisa digunakan lagi dan bisa menerima data dari luar melalui props
