@@ -49,3 +49,6 @@ Karena Union type itu membuat status hanya bisa menggunakan pilihan yang sudah d
 
 ## Refleksi
 Dalam penjelasan materi dan tugas di pertemuan ini, konsep yang paling mengubah cara berpikir saya adalah komponen dan props. Disaat menulis HMTL biasa akan lebih fokus dalam membuat tamplilan, di react justru membuat bagian tampilan itu bisa digunakan lagi dan bisa menerima data dari luar melalui props
+
+## Refleksi Pertemuan 3
+Conditional rendering membuat saya lebih paham bahwa tampilan pada website bisa menyesuaikan kondisi data, jadi tidak semua elemen harus selalu ditampilkan.
