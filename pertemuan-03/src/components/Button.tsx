@@ -7,6 +7,14 @@
 //   warna latar berbeda per variant) — ini komponen REUSABLE: satu
 //   komponen, tiga tampilan, diatur lewat props.
 // Lihat SOAL.md untuk kontrak lengkap.
-export function Button(props: any) {
-  return <button>TODO</button>
+export function Button(props: {variant: 'primary' | 'secondary' | 'danger'; children: React.ReactNode; onClick?: () => void}) {
+  const variant = props.variant;
+  return <button className={
+    variant === 'primary' ? 'bg-pink-500 hover:bg-pink-700 text-white' :
+    variant === 'secondary' ? 'bg-gray-500 hover:bg-gray-700 text-white' :
+    'bg-red-500 hover:bg-red-700 text-white'
+  } 
+    onClick={props.onClick}>
+    {props.children}
+  </button>
 }
