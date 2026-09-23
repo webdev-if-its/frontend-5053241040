@@ -3,6 +3,9 @@
 // TIAP KALI isinya berubah (tiap ketikan) — gunakan onChange dengan tipe event
 // yang tepat.
 // Lihat SOAL.md untuk kontrak lengkap.
-export function KotakInput(props: any) {
-  return <p>TODO</p>
+export function KotakInput(props: {onUbah: (nilai: string) => void}) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    props.onUbah(e.target.value);
+} return (<input onChange={handleChange}/>)
+
 }
