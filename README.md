@@ -52,3 +52,6 @@ Dalam penjelasan materi dan tugas di pertemuan ini, konsep yang paling mengubah 
 
 ## Refleksi Pertemuan 3
 Conditional rendering membuat saya lebih paham bahwa tampilan pada website bisa menyesuaikan kondisi data, jadi tidak semua elemen harus selalu ditampilkan.
+
+## Refleksi Pertemuan 4
+Variabel biasa hanya menyimpan nilai, jadi perubahan nilainya tidak membuat React memperbarui tampilan. State berbeda karena React akan merender ulang komponen ketika state berubah. Selain itu, `e.target.value` perlu diubah menjadi number karena nilai dari input selalu berupa string, sehingga jika langsung dijumlahkan bisa dianggap sebagai penggabungan teks
