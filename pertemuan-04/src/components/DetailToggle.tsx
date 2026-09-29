@@ -4,6 +4,15 @@
 // "Sembunyikan detail"; klik lagi menyembunyikannya (elemennya harus
 // benar-benar hilang dari DOM).
 // Lihat SOAL.md untuk kontrak lengkap.
-export function DetailToggle(props: any) {
-  return <p>TODO</p>
+import {useState} from "react"
+export function DetailToggle(props: {isi:string}) {
+  const [tampil, setTampil] = useState(false)
+  return (
+    <div>
+      <button onClick={()=> setTampil(!tampil)}>
+        {tampil? "Sembunyikan detail" : "Tampilkan detail"}
+      </button>
+      {tampil && <p>{props.isi}</p>}
+    </div>
+  )
 }
