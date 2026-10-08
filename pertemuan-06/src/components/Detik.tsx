@@ -4,6 +4,16 @@
 // cleanup (clearInterval) supaya timer tidak menumpuk — termasuk saat
 // komponen dilepas (unmount).
 // Lihat SOAL.md untuk kontrak lengkap.
-export function Detik(props: any) {
-  return <p>TODO</p>
+import { useEffect, useState } from "react";
+export function Detik() {
+  const [detik, setDetik] = useState(0);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDetik((d) => d + 1);
+    }, 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+  return <p>Detik: {detik}</p>;
 }
