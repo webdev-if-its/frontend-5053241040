@@ -55,3 +55,6 @@ Conditional rendering membuat saya lebih paham bahwa tampilan pada website bisa 
 
 ## Refleksi Pertemuan 4
 Variabel biasa hanya menyimpan nilai, jadi perubahan nilainya tidak membuat React memperbarui tampilan. State berbeda karena React akan merender ulang komponen ketika state berubah. Selain itu, `e.target.value` perlu diubah menjadi number karena nilai dari input selalu berupa string, sehingga jika langsung dijumlahkan bisa dianggap sebagai penggabungan teks
+
+## Refleksi Pertemuan 6
+Cleanup diperlukan untuk menghentikan timer dan menghapus event listener agar tidak menumpuk. Jika tidak menggunakan cleanup, fungsi bisa berjalan berkali-kali. Di StrictMode, effect bisa dijalankan dua kali saat development untuk membantu menemukan kesalahan

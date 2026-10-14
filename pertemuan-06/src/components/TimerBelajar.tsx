@@ -11,6 +11,52 @@
 //   terpasang, dan KEMBALI ke judul semula saat komponen dilepas
 //   (cleanup).
 // Lihat SOAL.md untuk kontrak lengkap.
-export function TimerBelajar(props: any) {
-  return <p>TODO</p>
+import { useEffect, useState } from 'react'
+export function TimerBelajar(props: {detikAwal: number}) {
+  const [sisa, setSisa] = useState(props.detikAwal);
+  const [jalan, setJalan] = useState(false);
+  useEffect(() => {
+    if (!jalan || sisa <= 0) {
+      return;
+    }
+    const timer = setInterval(() => {
+      setSisa((nilai) => nilai - 1);
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [jalan, sisa]);
+  useEffect(() => {
+    const judulSebelumnya = document.title;
+
+    document.title = `Sisa: ${sisa} detik`;
+    return () => {
+      document.title = judulSebelumnya;
+    };
+  }, [sisa]);
+  useEffect(() => {
+    if (sisa === 0) {
+      setJalan(false);
+    }
+  }, [sisa]);
+  const handleReset = () => {
+    setSisa(props.detikAwal);
+    setJalan(false);
+  };
+  const selesai = sisa === 0;
+  return (
+    <div>
+      <p>Sisa: {sisa} detik</p>
+      {selesai && <p>Selesai!</p>}
+      <button
+        onClick={() => setJalan((j) => !j)}
+        disabled={selesai}
+      >
+        {jalan ? "Jeda" : "Mulai"}
+      </button>
+      <button onClick={handleReset}>
+        Reset
+      </button>
+    </div>
+  );
 }
