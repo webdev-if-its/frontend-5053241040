@@ -20,8 +20,18 @@ export async function getTodos(): Promise<Todo[]> {
 }
 
 // Level 3
-export async function addTodo(title: any): Promise<any> {
-  throw new Error('TODO')
+export async function addTodo(title : string): Promise<Todo> {
+  const response = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({title, completed: false, userId: 1})
+  });
+  if (!response.ok) {
+    throw new Error("Gagal menambahkan todo");
+  }
+  return response.json();
 }
 
 // Level 4
