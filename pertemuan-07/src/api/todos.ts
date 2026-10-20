@@ -13,6 +13,9 @@ export async function getTodos(): Promise<Todo[]> {
     const response = await fetch(BASE_URL, {
       method: 'GET',
     });
+    if (!response.ok) {
+      throw new Error("Gagal mengambil data");
+    }
     return response.json();
 }
 
