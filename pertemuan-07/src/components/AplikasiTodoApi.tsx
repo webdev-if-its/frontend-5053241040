@@ -10,6 +10,71 @@
 //   state dengan HASIL RESPONS,
 // - klik "Hapus": panggil hapusTodo(id), lalu buang todo itu dari state.
 // Lihat SOAL.md untuk kontrak lengkap.
-export function AplikasiTodoApi(props: any) {
-  return <p>TODO</p>
+import { useEffect, useState } from "react"
+import { getTodos, addTodo, updateTodo, hapusTodo } from "../api/todos"
+import type { Todo } from "../types"
+export function AplikasiTodoApi() {
+  const [todos, setTodos] = useState<Todo[]>([])
+  const [title, setTitle] = useState("")
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
+  useEffect (() => {
+    getTodos() .then ((data) => {
+      setTodos(data);
+    })
+    .catch((err: unknown) => {
+      setError(err instanceof Error ? err.message : "Terjadi kesalahan yang tidak diketahui");
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+  },[]);
+  async function handleTambah() {
+    const judul = title.trim();
+    if (judul === "") {
+      return;
+    }
+    try {
+      const todoBaru = await addTodo(judul);
+      setTodos((todosSebelumnya) => [...todosSebelumnya, todoBaru]);
+      setTitle("");
+      setError(null);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Terjadi kesalahan yang tidak diketahui");
+    }
+  }
+  if (loading) {
+    return <p>Memuat...</p>
+  }
+
+  return (<div>
+    {error !== null && <p>Terjadi error: {error}</p>}
+    <form onSubmit={(event) => {
+        event.preventDefault();
+        void handleTambah();
+      }}> 
+      <label htmlFor="todo-baru">Todo baru:</label>
+      <input 
+      id="todo-baru"
+      value={title}
+      onChange={(event) => setTitle(event.target.value)}/>
+      <button type="submit">Tambah</button>
+    </form>
+    <ul>
+      {todos.map((todo) => 
+      <li key ={todo.id}>
+        <input 
+        type="checkbox"
+        checked={todo.completed}
+        readOnly
+        aria-label={todo.title}/>
+        <span>{todo.title}</span>
+        <button type="button" disabled> 
+          Hapus
+        </button>
+      </li>
+      )}
+    </ul>
+  </div>
+  );
 }
