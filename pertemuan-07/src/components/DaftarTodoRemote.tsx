@@ -14,15 +14,24 @@ import type { Todo } from "../types"
 export function DaftarTodoRemote() {
   const [todos, setTodos] = useState<Todo[]>([])
   const [loading, setLoading] = useState<boolean>(true)
-  useEffect (() => {
+  const [error, setError] = useState<string | null>(null)
+  useEffect(() => {
     getTodos()
       .then((todos) => {
-        setTodos(todos)
-        setLoading(false)
+        setTodos(todos);
       })
-  }, [])
+      .catch((err: unknown) => {
+        setError(err instanceof Error ? err.message: "Terjadi kesalahan yang tidak diketahui");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
   if (loading) {
     return <p>Memuat...</p>
+  }
+  if (error !== null) {
+    return <p>Terjadi error: {error}</p>
   }
   return (<ul>
     {todos.map((todo) => (
