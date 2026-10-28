@@ -58,3 +58,6 @@ Variabel biasa hanya menyimpan nilai, jadi perubahan nilainya tidak membuat Reac
 
 ## Refleksi Pertemuan 6
 Cleanup diperlukan untuk menghentikan timer dan menghapus event listener agar tidak menumpuk. Jika tidak menggunakan cleanup, fungsi bisa berjalan berkali-kali. Di StrictMode, effect bisa dijalankan dua kali saat development untuk membantu menemukan kesalahan
+
+## Refleksi Pertemuan 9
+Memisahkan fungsi API dari komponen membuat kode lebih terstruktur karena komponen fokus pada tampilan dan state, sedangkan fungsi API menangani request HTTP. Pemisahan memudahkan pemeliharaan dan pengujian kode. Selain itu, `fetch()` tidak otomatis melempar error untuk respons HTTP 404 atau 500 karena respons tersebut tetap dianggap sebagai respons yang berhasil diterima. Oleh karena itu, properti `response.ok` perlu diperiksa secara manual dan error dilempar jika nilainya `false`
