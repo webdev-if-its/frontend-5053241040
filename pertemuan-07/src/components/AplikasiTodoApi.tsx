@@ -43,6 +43,33 @@ export function AplikasiTodoApi() {
       setError(err instanceof Error ? err.message : "Terjadi kesalahan yang tidak diketahui");
     }
   }
+  
+async function handleToggle(todo: Todo) {
+  try {
+    const todoDiperbarui = await updateTodo(todo.id, !todo.completed)
+    setTodos((todosSebelumnya) =>
+      todosSebelumnya.map((item) =>
+        item.id === todo.id ? todoDiperbarui : item
+      )
+    );
+    setError(null);
+  } catch (err: unknown) {
+    setError(err instanceof Error ? err.message : "Terjadi kesalahan yang tidak diketahui")
+  }
+}
+
+async function handleHapus(id: number) {
+  try {
+    await hapusTodo(id);
+    setTodos((todosSebelumnya) =>
+      todosSebelumnya.filter((todo) => todo.id !== id)
+    );
+    setError(null);
+  } catch (err: unknown) {
+    setError(err instanceof Error ? err.message : "Terjadi kesalahan yang tidak diketahui")
+  }
+}
+
   if (loading) {
     return <p>Memuat...</p>
   }
@@ -62,14 +89,16 @@ export function AplikasiTodoApi() {
     </form>
     <ul>
       {todos.map((todo) => 
-      <li key ={todo.id}>
-        <input 
-        type="checkbox"
-        checked={todo.completed}
-        readOnly
-        aria-label={todo.title}/>
+      <li key ={todo.id}>   
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => void handleToggle(todo)}
+          aria-label={todo.title}/>
         <span>{todo.title}</span>
-        <button type="button" disabled> 
+        <button
+          type="button"
+          onClick={() => void handleHapus(todo.id)}>
           Hapus
         </button>
       </li>
